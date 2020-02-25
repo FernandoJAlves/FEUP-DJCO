@@ -7,13 +7,19 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 3.5f;
 
     // Start is called before the first frame update
-    void Start()
+    void Start ()
+    {
+        Debug.Log("Start Player!"); // here for testing purposes, can be removed later
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
+    // FixedUpdate is recomended when dealing with physics
+    void FixedUpdate ()
     {
         // Move Character in the X and Y Axis
         float deltaX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
@@ -24,5 +30,11 @@ public class PlayerMovement : MonoBehaviour
 
         // Move the Character:
         transform.Translate(vec);
+    }
+
+    // Detects when a collision occurs
+    private void OnCollisionEnter2D(Collision2D other) {
+        Debug.Log("Collision Detected!");
+        // TODO: Collision logic
     }
 }
