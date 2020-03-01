@@ -11,13 +11,20 @@ public class BoltGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButtonDown("Fire1"))
+        {
             Shoot();
         }
     }
 
-    void Shoot() {
-        // Shooting Logic
-        Instantiate(boltPrefab, FirePoint.position, FirePoint.rotation);
+    void Shoot()
+    {
+        GameObject bolt = ObjectPooler.sharedInstance.GetPooledObject();
+        if (bolt != null)
+        {
+            bolt.transform.position = FirePoint.position;
+            bolt.transform.rotation = FirePoint.rotation;
+            bolt.SetActive(true);
+        }
     }
 }

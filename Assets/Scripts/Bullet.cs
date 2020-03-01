@@ -8,14 +8,19 @@ public class Bullet : MonoBehaviour
     public float speed = 4.0f;
     public Rigidbody2D body;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    // Start is called every time a bolt is set as active
+    void OnEnable() {
         body.velocity = transform.right * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo) {
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
         Debug.Log(hitInfo.name);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    void OnBecameInvisible()
+    {
+        gameObject.SetActive(false);
     }
 }

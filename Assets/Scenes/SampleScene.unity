@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 354484782}
   - component: {fileID: 354484784}
   - component: {fileID: 354484783}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Escape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1097072706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 1322162815}
   - component: {fileID: 1322162817}
   - component: {fileID: 1322162816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -827,6 +827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1553340560}
   - component: {fileID: 1553340561}
+  - component: {fileID: 1553340562}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -863,6 +864,22 @@ MonoBehaviour:
   electroBot: {fileID: 105491344925835000, guid: fb26299a4711b4118ad95284039d572a,
     type: 3}
   spawnRate: 4
+--- !u!114 &1553340562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553340559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e376ee67ad3383faa66bfd357969d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 4604274923719571036, guid: 8d5a8d922b416cf4d9f808959dc188b0,
+    type: 3}
+  amountToPool: 20
 --- !u!1 &2042954714
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +895,7 @@ GameObject:
   - component: {fileID: 2042954719}
   - component: {fileID: 2042954720}
   - component: {fileID: 2042954721}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
