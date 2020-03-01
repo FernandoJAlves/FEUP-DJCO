@@ -593,6 +593,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1097072705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1097072706}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1097072706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097072705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7, y: -0.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2042954716}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1109761710
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +876,8 @@ GameObject:
   - component: {fileID: 2042954717}
   - component: {fileID: 2042954718}
   - component: {fileID: 2042954719}
+  - component: {fileID: 2042954720}
+  - component: {fileID: 2042954721}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -916,6 +948,7 @@ Transform:
   m_Children:
   - {fileID: 354484782}
   - {fileID: 1322162815}
+  - {fileID: 1097072706}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -979,3 +1012,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.36, y: 1.88}
   m_EdgeRadius: 0
+--- !u!114 &2042954720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042954714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f683ed4356057c8d18fb7541f23e6807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2042954721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042954714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17d2e07870d1ab968537131bdad7e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirePoint: {fileID: 1097072706}
+  boltPrefab: {fileID: 4604274923719571036, guid: 8d5a8d922b416cf4d9f808959dc188b0,
+    type: 3}
