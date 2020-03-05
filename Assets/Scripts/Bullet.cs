@@ -6,10 +6,11 @@ public class Bullet : MonoBehaviour
 {
 
     public float speed = 4.0f;
+    public Rigidbody2D body;
 
     // Start is called every time a bolt is set as active
-    void Update() {
-        transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
+    void OnEnable() {
+        body.velocity = transform.right * speed;
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
