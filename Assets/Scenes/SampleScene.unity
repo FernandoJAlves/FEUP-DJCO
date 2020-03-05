@@ -509,8 +509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eb9c020d175386f58e2a778da0319d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
-  currentHealth: 0
+  healthPoints: 0
+  player: {fileID: 0}
 --- !u!1 &786313854
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +955,7 @@ GameObject:
   - component: {fileID: 2042954719}
   - component: {fileID: 2042954720}
   - component: {fileID: 2042954721}
+  - component: {fileID: 2042954722}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1117,3 +1118,16 @@ MonoBehaviour:
   FirePoint: {fileID: 1097072706}
   boltPrefab: {fileID: 4604274923719571036, guid: 8d5a8d922b416cf4d9f808959dc188b0,
     type: 3}
+--- !u!114 &2042954722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042954714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63bb0d3c7dc1e9dcba7624577a7826b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 2042954719}
