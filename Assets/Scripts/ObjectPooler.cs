@@ -20,9 +20,13 @@ public class ObjectPooler : MonoBehaviour
     void Start()
     {
         pooledObjects = new List<GameObject>();
+        GameObject bullets = new GameObject();
+        bullets.name = "Bolts";
+
         for (int i = 0; i < amountToPool; i++)
         {
             GameObject obj = (GameObject)Instantiate(objectToPool);
+            obj.transform.parent = bullets.transform;
             obj.SetActive(false);
             pooledObjects.Add(obj);
         }

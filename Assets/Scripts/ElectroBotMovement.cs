@@ -4,34 +4,38 @@ public class ElectroBotMovement : MonoBehaviour
 {
     private Transform playerTransform;
 
-    public enum ElectroBotState {
+    public enum ElectroBotState
+    {
         TOP, BOTTOM, RISING, FALLING
     }
 
     // bot movement state
     public ElectroBotState botState = ElectroBotState.TOP;
-    
+
     // movement variables
     public float movementSpeed = 0.7f;
     private float timeInCurrentState = 0f;
     private float maxTimeHorizontal = 1.5f;
     private float maxTimeDiagonal = 0.2f;
 
-    void Start() {
+    void Start()
+    {
         // create a reference to the player position
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    void Update() {
+    void Update()
+    {
 
-        switch (botState) {
+        switch (botState)
+        {
             case ElectroBotState.TOP:
             case ElectroBotState.BOTTOM:
                 if (timeInCurrentState >= maxTimeHorizontal)
                     changeState();
                 break;
 
-            case ElectroBotState.FALLING:            
+            case ElectroBotState.FALLING:
             case ElectroBotState.RISING:
                 if (timeInCurrentState >= maxTimeDiagonal)
                     changeState();
@@ -41,11 +45,12 @@ public class ElectroBotMovement : MonoBehaviour
                 Debug.LogError("INVALID STATE!");
                 break;
         }
-        
-        timeInCurrentState += Time.deltaTime;    
+
+        timeInCurrentState += Time.deltaTime;
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
 
         switch (botState)
         {
@@ -56,7 +61,7 @@ public class ElectroBotMovement : MonoBehaviour
             case ElectroBotState.FALLING:
                 transform.position += new Vector3(-1, -3, 0) * movementSpeed * Time.deltaTime;
                 break;
-            
+
             case ElectroBotState.RISING:
                 transform.position += new Vector3(-1, 3, 0) * movementSpeed * Time.deltaTime;
                 break;
@@ -64,8 +69,10 @@ public class ElectroBotMovement : MonoBehaviour
 
     }
 
-    private void changeState() {
-        switch (botState) {
+    private void changeState()
+    {
+        switch (botState)
+        {
             case ElectroBotState.TOP:
                 botState = ElectroBotState.FALLING;
                 break;
@@ -84,6 +91,17 @@ public class ElectroBotMovement : MonoBehaviour
         }
 
         timeInCurrentState = 0f;
+    }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        Debug.Log("ElectroBot collided with " + hitInfo.name);
+        Destroy(gameObject);
     }
 
 }
