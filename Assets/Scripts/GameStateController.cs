@@ -14,6 +14,8 @@ public class GameStateController : MonoBehaviour
     public GameState gameState = GameState.PLAYING;
     public float restartDelay = 1.5f;
 
+    public int score = 0;
+
     void Awake()
     {
         instance = this;
@@ -34,6 +36,10 @@ public class GameStateController : MonoBehaviour
             Debug.Log("Game Over!");
             Invoke("RestartLevel", restartDelay);
         }
+    }
+
+    public void Score(int points) {
+        this.score += points;
     }
 
 

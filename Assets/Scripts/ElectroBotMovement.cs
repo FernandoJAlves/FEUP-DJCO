@@ -18,6 +18,9 @@ public class ElectroBotMovement : MonoBehaviour
     private float maxTimeHorizontal = 1.5f;
     private float maxTimeDiagonal = 0.2f;
 
+    // Bot destruction score
+    public int destructionScore = 30;
+
     void Start()
     {
         // create a reference to the player position
@@ -101,6 +104,7 @@ public class ElectroBotMovement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Debug.Log("ElectroBot collided with " + hitInfo.name);
+        GameStateController.instance.Score(this.destructionScore);
         Destroy(gameObject);
     }
 
