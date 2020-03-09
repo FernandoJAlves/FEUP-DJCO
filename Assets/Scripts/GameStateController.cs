@@ -8,17 +8,38 @@ public class GameStateController : MonoBehaviour
 
     public enum GameState
     {
-        PLAYING, PAUSED, GAMEOVER
+        PLAYING, PAUSED, GAMEOVER, GAMEWON
     }
 
     public GameState gameState = GameState.PLAYING;
     public float restartDelay = 1.5f;
+    public float playTime = 0f;
+    public float timeMultiplier = 10f;
+    private float timeSinceLastScoreSync = 0f;
 
     public int score = 0;
 
     void Awake()
     {
         instance = this;
+    }
+
+    private void Update() {
+        if (gameState == GameState.PLAYING) {
+            playTime += Time.deltaTime;
+            timeSinceLastScoreSync += Time.deltaTime;
+
+            if (playTime >= 40f) { // TODO: Adjust this
+                gameState = GameState.GAMEWON;
+                Debug.Log("Game Won!");
+                Invoke("RestartLevel", restartDelay);
+            }
+
+            if (timeSinceLastScoreSync >= 0.2f) {
+                score += Mathf.CeilToInt(timeSinceLastScoreSync * timeMultiplier); // TODO: Review this with Juan
+                timeSinceLastScoreSync = 0f;
+            }
+        }
     }
 
     public void RestartLevel()

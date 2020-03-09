@@ -667,7 +667,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 3
-  player: {fileID: 0}
 --- !u!1 &786313854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,7 +1173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
-  restartDelay: 1
+  restartDelay: 1.5
+  playTime: 0
+  timeMultiplier: 10
   score: 0
 --- !u!1 &2042954714
 GameObject:
