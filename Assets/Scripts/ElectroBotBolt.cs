@@ -2,22 +2,22 @@
 
 public class ElectroBotBolt : MonoBehaviour
 {
-    public float speed = 4.0f;
+    public float speed = 2.0f;
     public Rigidbody2D body;
     
-    // Start is called before the first frame update
     void Start() {
-        body.velocity = -transform.right * speed;
+        // aim bolt to current player position
+        Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position;
+        Vector3 firingDirection = playerPosition - transform.position;
+        body.velocity = firingDirection.normalized * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
-    {
+    void OnTriggerEnter2D(Collider2D hitInfo) {
         Debug.Log("ELETRO BOLT HIT SOMETHING!!!");
         Destroy(gameObject);
     }
 
-    void OnBecameInvisible()
-    {
+    void OnBecameInvisible() {
         Destroy(gameObject);
     }
 }
