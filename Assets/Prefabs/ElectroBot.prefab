@@ -138,6 +138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55532f9c31dfd475f86e8afbe6915a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeSinceLastShot: 0
+  maxTimeBetweenShots: 2
+  eletroBotBoltPrefab: {fileID: 3295334553677825132, guid: 9161d61507aa24cdca589da458aa8aee,
+    type: 3}
 --- !u!1 &105491345189875424
 GameObject:
   m_ObjectHideFlags: 0
