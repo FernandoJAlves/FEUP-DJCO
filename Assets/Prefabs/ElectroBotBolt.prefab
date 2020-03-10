@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3194737571343087919}
   - component: {fileID: -356546363036842072}
   - component: {fileID: 8251068007428878536}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ElectroBotBolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
