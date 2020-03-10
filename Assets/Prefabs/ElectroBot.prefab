@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 105491344925835001}
   - component: {fileID: 5947332526811795343}
   - component: {fileID: 8003452612694016751}
+  - component: {fileID: 551909710642351930}
   m_Layer: 0
   m_Name: ElectroBot
   m_TagString: Untagged
@@ -125,6 +126,18 @@ MonoBehaviour:
   botState: 0
   movementSpeed: 0.7
   destructionScore: 30
+--- !u!114 &551909710642351930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105491344925835000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55532f9c31dfd475f86e8afbe6915a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &105491345189875424
 GameObject:
   m_ObjectHideFlags: 0
