@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Power-UP
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Player
   - Normal Bolts
   - ElectroBot Bolts
-  - 
+  - Power-Ups
   - 
   - 
   - 

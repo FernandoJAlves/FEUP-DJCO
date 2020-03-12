@@ -9,7 +9,13 @@ public class PlayerCollisions : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
+        string tag = hitInfo.tag;
         Debug.Log("Player collider with " + hitInfo.name);
+
+        if (tag == "Power-UP") {
+            return;
+        }
+
         playerHealth.GetComponent<PlayerHealth>().TakeDamage();
     }
 }
