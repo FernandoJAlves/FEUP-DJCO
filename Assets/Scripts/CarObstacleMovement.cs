@@ -2,7 +2,7 @@
 
 public class CarObstacleMovement : MonoBehaviour
 {
-    public float movementSpeed = 1f;
+    public float movementSpeed = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,9 @@ public class CarObstacleMovement : MonoBehaviour
 
     void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        // only destroy if on the left of the screen
+        if (transform.position.x <= 0) {
+            Destroy(gameObject);
+        }
     }
 }
