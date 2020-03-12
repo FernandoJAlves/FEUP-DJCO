@@ -98,7 +98,10 @@ public class ElectroBotMovement : MonoBehaviour
 
     void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        // only destroy if on the left of the screen
+        if (transform.position.x <= 0) {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)

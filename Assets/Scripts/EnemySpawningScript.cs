@@ -31,7 +31,7 @@ public class EnemySpawningScript : MonoBehaviour
         {
             case NextEnemyType.ELECTROBOT:
                 float randOffsetY = Random.Range(-0.5f, 0.5f);
-                Vector3 spawnPoint = new Vector3 (3f, 1.4f + randOffsetY, -5f);
+                Vector3 spawnPoint = new Vector3 (6f, 1.4f + randOffsetY, -5f);
                 Instantiate (electroBot, spawnPoint, Quaternion.identity);
                 break;
 
