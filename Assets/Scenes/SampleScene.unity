@@ -1231,6 +1231,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   calPowerUp: {fileID: 6775592699749247082, guid: ad52ac664ab784d90a01ad79f4ec6889,
     type: 3}
+  aocPowerUp: {fileID: 7831270484690627059, guid: 11cf74dc010398bdca1e0190127baac5,
+    type: 3}
   spawnRate: 6
 --- !u!1 &2042954714
 GameObject:
