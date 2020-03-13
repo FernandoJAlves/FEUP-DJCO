@@ -4,7 +4,13 @@ using UnityEngine;
 
 public abstract class PowerUp : MonoBehaviour
 {
-    public int timeLimit;
+    public int timeLimit = 10;
+    public float movementSpeed = 1f;
+
+    private void Update()
+    {
+        transform.position += new Vector3(-1, 0, 0) * movementSpeed * Time.deltaTime;
+    }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {

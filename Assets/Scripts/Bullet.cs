@@ -28,4 +28,10 @@ public class Bullet : MonoBehaviour
     public void setExtraSpeed(float extra) {
         extraSpeed = extra;
     }
+
+    public void setRotation(float angle) {
+        if (angle == 0) return;
+
+        body.MoveRotation(angle);
+    }
 }
