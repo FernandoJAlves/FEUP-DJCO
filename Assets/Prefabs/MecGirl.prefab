@@ -136,3 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe025a3df3bd4af792236b5ca761691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeSinceLastShot: 0
+  maxTimeBetweenShots: 2
+  mecGirlScrewPrefab: {fileID: 2399318199233244286, guid: 5902a2dd15ade295d8c6ae11ed182140,
+    type: 3}
