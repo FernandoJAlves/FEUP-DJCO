@@ -134,3 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: -180, y: 300}
+  timeBetweenRotates: 0.2
