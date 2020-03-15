@@ -142,6 +142,14 @@ MonoBehaviour:
   maxTimeBetweenShots: 2
   eletroBotBoltPrefab: {fileID: 3295334553677825132, guid: 9161d61507aa24cdca589da458aa8aee,
     type: 3}
+  spriteRenderer: {fileID: 105491344925835001}
+  helix: {fileID: 105491345189875424}
+  sprites:
+  - {fileID: 21300000, guid: 0b84dae89fa6a402293eeb4013a6e0b2, type: 3}
+  - {fileID: 21300000, guid: 82f420fc399ec6cbfb92b3f4b0d9c371, type: 3}
+  - {fileID: 21300000, guid: bcbea9aca73a16118b20587868302a47, type: 3}
+  - {fileID: 21300000, guid: a6a7b796c4e7d157592222ad464b8feb, type: 3}
+  - {fileID: 21300000, guid: bf122ec0531d39298bf7e6955abbe422, type: 3}
 --- !u!1 &105491345189875424
 GameObject:
   m_ObjectHideFlags: 0
