@@ -1941,7 +1941,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Move your character using the KEYS WASD ou the ARrow Keys
+  m_Text: Move your character using the KEYS WASD or the ARrow Keys
 --- !u!222 &1170279668
 CanvasRenderer:
   m_ObjectHideFlags: 0
