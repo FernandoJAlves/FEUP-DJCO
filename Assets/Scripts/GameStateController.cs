@@ -19,6 +19,8 @@ public class GameStateController : MonoBehaviour
 
     public int score = 0;
 
+    public GameObject gameWonUI;
+
     void Awake()
     {
         instance = this;
@@ -29,9 +31,10 @@ public class GameStateController : MonoBehaviour
             playTime += Time.deltaTime;
             timeSinceLastScoreSync += Time.deltaTime;
 
-            if (playTime >= 40f) { // TODO: Adjust this
+            if (playTime >= 3f) { // TODO: Adjust this
                 gameState = GameState.GAMEWON;
                 Debug.Log("Game Won!");
+                gameWonUI.SetActive(true);
                 Invoke("RestartLevel", restartDelay);
             }
 
