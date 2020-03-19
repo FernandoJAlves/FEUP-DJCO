@@ -18,11 +18,12 @@ public class EnemySpawningScript : MonoBehaviour
 
     // Enum of wave state
     public enum CurrentWaveType {
-        WAVE1, WAVE2, WAVE3, PAUSE
+        WAVE1, WAVE2, WAVE3, PAUSE1, PAUSE2, PAUSE3, GAMEENDED
     }
 
     // Current Wave
     public CurrentWaveType currentWaveType = CurrentWaveType.WAVE1;
+    private float timeInCurrentWave = 0f;
 
     // Enum of valid enemies
     public enum NextEnemyType {
@@ -42,7 +43,13 @@ public class EnemySpawningScript : MonoBehaviour
     // Update is called once per frame
     void Update() {
         
-        if (Time.time > nextSpawn) {
+        UpdateWaveState();
+
+        if (Time.time > nextSpawn &&
+            currentWaveType != CurrentWaveType.PAUSE1 &&
+            currentWaveType != CurrentWaveType.PAUSE2 &&
+            currentWaveType != CurrentWaveType.PAUSE3) {
+
             spawnEnemy();
         }
 
@@ -91,4 +98,53 @@ public class EnemySpawningScript : MonoBehaviour
         Debug.LogError("Enexpected return statement reached");
         return NextEnemyType.ELECTROBOT;
     }
+
+    private void UpdateWaveState () {
+
+        timeInCurrentWave += Time.deltaTime;
+
+        switch (currentWaveType) {
+            case CurrentWaveType.WAVE1: 
+                if (timeInCurrentWave > durationWave1) {
+                    currentWaveType = CurrentWaveType.PAUSE1;
+                    timeInCurrentWave = 0f;
+                }
+                break;
+            case CurrentWaveType.WAVE2: 
+                if (timeInCurrentWave > durationWave2) {
+                    currentWaveType = CurrentWaveType.PAUSE2;
+                    timeInCurrentWave = 0f;
+                }
+                break;
+            case CurrentWaveType.WAVE3: 
+                if (timeInCurrentWave > durationWave3) {
+                    currentWaveType = CurrentWaveType.PAUSE3;
+                    timeInCurrentWave = 0f;
+                }
+                break;
+            case CurrentWaveType.PAUSE1: 
+                if (timeInCurrentWave > durationBetweenRounds) {
+                    currentWaveType = CurrentWaveType.WAVE2;
+                    timeInCurrentWave = 0f;
+                }
+                break;
+            case CurrentWaveType.PAUSE2: 
+                if (timeInCurrentWave > durationBetweenRounds) {
+                    currentWaveType = CurrentWaveType.WAVE3;
+                    timeInCurrentWave = 0f;
+                }
+                break;
+            case CurrentWaveType.PAUSE3:
+                if (timeInCurrentWave > durationBetweenRounds) {
+                    GameStateController.instance.GameWon();
+                    currentWaveType = CurrentWaveType.GAMEENDED;
+                    timeInCurrentWave = 0f;
+                }
+                break;
+
+            default:
+                break;
+        }
+    }
+
 }
