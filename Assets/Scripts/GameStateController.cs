@@ -20,6 +20,7 @@ public class GameStateController : MonoBehaviour
     public int score = 0;
 
     public GameObject gameWonUI;
+    public GameObject gameOverUI;
 
     void Awake()
     {
@@ -27,7 +28,7 @@ public class GameStateController : MonoBehaviour
     }
 
     private void Update() {
-        if (gameState == GameState.GAMEWON) {
+        if (gameState == GameState.GAMEWON || gameState == GameState.GAMEOVER) {
             // TODO: remove this, temporary while I have no buttons
             if (Input.GetKey("r")) {
                 Invoke("RestartLevel", restartDelay);
@@ -55,12 +56,13 @@ public class GameStateController : MonoBehaviour
 
     public void GameOver()
     {
-
         if (gameState == GameState.PLAYING)
         {
             gameState = GameState.GAMEOVER;
             Debug.Log("Game Over!");
-            Invoke("RestartLevel", restartDelay);
+            gameOverUI.SetActive(true);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>().enabled = false;
+            DisableGameSpawners();
         }
     }
 
