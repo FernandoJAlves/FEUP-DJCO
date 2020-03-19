@@ -15,6 +15,16 @@ public class PowerUpSpawningScript : MonoBehaviour
         CAL_POWER, AOC_POWER
     }
 
+    private float screenHeight = 0f;
+    private float screenWidth = 0f;
+
+    private void Start() {
+        Vector2 topRightCorner = new Vector2(1, 1);
+        Vector2 edgeVector = Camera.main.ViewportToWorldPoint(topRightCorner);
+        screenHeight = edgeVector.y * 2;
+        screenWidth = edgeVector.x * 2;
+    }
+
     // Update is called once per frame
     void Update() {
         if (Time.time > nextSpawn) {
@@ -31,14 +41,14 @@ public class PowerUpSpawningScript : MonoBehaviour
         {
             case NextPowerType.CAL_POWER: {
                 float randOffsetY = Random.Range(-1.2f, 1.2f);
-                Vector3 spawnPoint = new Vector3 (7f, randOffsetY, -5f);
+                Vector3 spawnPoint = new Vector3 (screenWidth + 1f, randOffsetY, -5f);
                 Instantiate (calPowerUp, spawnPoint, Quaternion.identity);
                 break;
             }
 
             case NextPowerType.AOC_POWER: {
                 float randOffsetY = Random.Range(-1.2f, 1.2f);
-                Vector3 spawnPoint = new Vector3 (7f, randOffsetY, -5f);
+                Vector3 spawnPoint = new Vector3 (screenWidth + 1f, randOffsetY, -5f);
                 Instantiate (aocPowerUp, spawnPoint, Quaternion.identity);
                 break;
             }
