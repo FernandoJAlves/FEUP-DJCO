@@ -37,10 +37,6 @@ public class GameStateController : MonoBehaviour
             playTime += Time.deltaTime;
             timeSinceLastScoreSync += Time.deltaTime;
 
-            if (playTime >= 40f) { // TODO: Adjust this
-                GameWon();
-            }
-
             if (timeSinceLastScoreSync >= 0.2f) {
                 score += Mathf.CeilToInt(timeSinceLastScoreSync * timeMultiplier); // TODO: Review this with Juan
                 timeSinceLastScoreSync = 0f;
