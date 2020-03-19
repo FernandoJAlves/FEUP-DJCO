@@ -8,6 +8,7 @@ public class ScreenTransition : MonoBehaviour
     public GameObject menuOptions;
     public GameObject backstory;
     public GameObject manual;
+    public GameObject powerUps;
     public GameObject enemies;
 
     public void MenuOptionsNext()
@@ -37,13 +38,23 @@ public class ScreenTransition : MonoBehaviour
     public void ManualNext()
     {
         manual.SetActive(false);
+        powerUps.SetActive(true);
+    }
+
+    public void PowerUpsBack() {
+        powerUps.SetActive(false);
+        manual.SetActive(true);
+    }
+
+    public void PowerUpsNext() {
+        powerUps.SetActive(false);
         enemies.SetActive(true);
     }
 
     public void EnemiesBack()
     {
         enemies.SetActive(false);
-        backstory.SetActive(true);
+        powerUps.SetActive(true);
     }
 
     public void StartGame()
