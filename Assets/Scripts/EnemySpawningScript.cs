@@ -6,8 +6,15 @@ public class EnemySpawningScript : MonoBehaviour
     public GameObject electroBot;
     public GameObject mecGirl;
 
+    // Vars for spawnRate
     public float spawnRate = 2.5f;
     float nextSpawn = 0f;
+
+    // Vars for waves duration
+    public float durationWave1 = 30f;
+    public float durationWave2 = 30f;
+    public float durationWave3 = 30f;
+    public float durationBetweenRounds = 5f;
 
     // Enum of valid enemies
     public enum NextEnemyType {
