@@ -59,7 +59,7 @@ public class GameStateController : MonoBehaviour
         if (gameState == GameState.PLAYING)
         {
             gameState = GameState.GAMEOVER;
-            Debug.Log("Game Over!");
+            // Debug.Log("Game Over!");
             gameOverUI.SetActive(true);
             GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>().enabled = false;
             DisableGameSpawners();
@@ -68,7 +68,7 @@ public class GameStateController : MonoBehaviour
 
     public void GameWon() {
         gameState = GameState.GAMEWON;
-        Debug.Log("Game Won!");
+        // Debug.Log("Game Won!");
         gameWonUI.SetActive(true);
         GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>().enabled = false;
         DisableGameSpawners();

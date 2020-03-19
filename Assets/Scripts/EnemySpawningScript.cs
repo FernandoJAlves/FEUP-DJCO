@@ -14,6 +14,16 @@ public class EnemySpawningScript : MonoBehaviour
         ELECTROBOT, MECGIRL
     }
 
+    private float screenHeight = 0f;
+    private float screenWidth = 0f;
+
+    private void Start() {
+        Vector2 topRightCorner = new Vector2(1, 1);
+        Vector2 edgeVector = Camera.main.ViewportToWorldPoint(topRightCorner);
+        screenHeight = edgeVector.y * 2;
+        screenWidth = edgeVector.x * 2;
+    }
+
     // Update is called once per frame
     void Update() {
         
@@ -31,15 +41,15 @@ public class EnemySpawningScript : MonoBehaviour
         switch (nextEnemyType)
         {
             case NextEnemyType.ELECTROBOT: {
-                float randOffsetY = Random.Range(-0.5f, 0.5f);
-                Vector3 spawnPoint = new Vector3 (6f, 1.4f + randOffsetY, -5f);
+                float randOffsetY = Random.Range(-screenHeight/2 + 1.5f, screenHeight/2 - 1f);
+                Vector3 spawnPoint = new Vector3 (screenWidth/2 + 1f, randOffsetY, -5f);
                 Instantiate (electroBot, spawnPoint, Quaternion.identity);
                 break;
             }
 
             case NextEnemyType.MECGIRL: {
-                float randOffsetY = Random.Range(-0.3f, 0.3f);
-                Vector3 spawnPoint = new Vector3 (6f, -1.3f + randOffsetY, -5f);
+                float randOffsetY = Random.Range(-screenHeight/2 + 1.5f, screenHeight/2 - 1f);
+                Vector3 spawnPoint = new Vector3 (screenWidth/2 + 1f, randOffsetY, -5f);
                 Instantiate (mecGirl, spawnPoint, Quaternion.identity);
                 break;
             }

@@ -25,11 +25,13 @@ public class MecGirlScrew : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo) {
-        Debug.Log("MEC GIRL SCREW HIT SOMETHING!!!");
+        // Debug.Log("MEC GIRL SCREW HIT SOMETHING!!!");
         Destroy(gameObject);
     }
 
     void OnBecameInvisible() {
-        Destroy(gameObject);
+        if (transform.position.y < 0) {
+            Destroy(gameObject);
+        }
     }
 }
