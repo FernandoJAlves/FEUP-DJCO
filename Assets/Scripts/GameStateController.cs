@@ -27,15 +27,17 @@ public class GameStateController : MonoBehaviour
     }
 
     private void Update() {
-        if (gameState == GameState.PLAYING) {
+        if (gameState == GameState.GAMEWON) {
+            // TODO: remove this, temporary while I have no buttons
+            if (Input.GetKey("r")) {
+                Invoke("RestartLevel", restartDelay);
+            }
+        } else if (gameState == GameState.PLAYING) {
             playTime += Time.deltaTime;
             timeSinceLastScoreSync += Time.deltaTime;
 
-            if (playTime >= 3f) { // TODO: Adjust this
-                gameState = GameState.GAMEWON;
-                Debug.Log("Game Won!");
-                gameWonUI.SetActive(true);
-                Invoke("RestartLevel", restartDelay);
+            if (playTime >= 40f) { // TODO: Adjust this
+                GameWon();
             }
 
             if (timeSinceLastScoreSync >= 0.2f) {
@@ -60,6 +62,20 @@ public class GameStateController : MonoBehaviour
             Debug.Log("Game Over!");
             Invoke("RestartLevel", restartDelay);
         }
+    }
+
+    public void GameWon() {
+        gameState = GameState.GAMEWON;
+        Debug.Log("Game Won!");
+        gameWonUI.SetActive(true);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>().enabled = false;
+        DisableGameSpawners();
+    }
+
+    public void DisableGameSpawners() {
+        GetComponent<EnemySpawningScript>().enabled = false;
+        GetComponent<ObstacleSpawningScript>().enabled = false;
+        GetComponent<PowerUpSpawningScript>().enabled = false;
     }
 
     public void Score(int points) {

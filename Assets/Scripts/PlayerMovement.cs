@@ -21,6 +21,11 @@ public class PlayerMovement : MonoBehaviour
     // FixedUpdate is recomended when dealing with physics
     void FixedUpdate ()
     {
+        // if game ended, stop moving
+        if (GameStateController.instance.gameState == GameStateController.GameState.GAMEWON) {
+            return;
+        }
+        
         // Move Character in the X and Y Axis
         float deltaX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float deltaY = Input.GetAxis("Vertical") * speed * Time.deltaTime;

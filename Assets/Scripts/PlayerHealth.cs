@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     
     private float timeToEnable = 0f;
     private float timeInDamaged = 2f;
+    private bool inDamagedState = false;
 
     private float timeInFlicker = 0f;
     private float maxTimeInFlicker = 0.1f;
@@ -26,10 +27,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update() {
     
-        if (!boxCollider.enabled) {
+        if (inDamagedState) {
             // re-enable the collider and stop flickering
             if (Time.time > timeToEnable) {
                 boxCollider.enabled = true;
+                inDamagedState = false;
                 enableSprites();
             }
             // flicker the player sprite
@@ -48,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
             GameStateController.instance.GameOver();
         } else {
             boxCollider.enabled = false;
+            inDamagedState = true;
             timeToEnable = Time.time + timeInDamaged;
         }
     }
