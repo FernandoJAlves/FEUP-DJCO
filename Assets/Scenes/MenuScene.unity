@@ -301,7 +301,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.6, y: -94}
+  m_AnchoredPosition: {x: 12.6, y: -110.64998}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &109293411
@@ -1003,7 +1003,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: INCREASES THE NUMBER OF EXTRA LIFES
+  m_Text: INCREASES THE NUMBER OF EXTRA LIFES. IF THE MAX VALUE, which is 3, IS EXCEEDED
+    you get extra score
 --- !u!222 &618876780
 CanvasRenderer:
   m_ObjectHideFlags: 0
