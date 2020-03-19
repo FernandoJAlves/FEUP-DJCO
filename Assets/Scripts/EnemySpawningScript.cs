@@ -16,6 +16,14 @@ public class EnemySpawningScript : MonoBehaviour
     public float durationWave3 = 30f;
     public float durationBetweenRounds = 5f;
 
+    // Enum of wave state
+    public enum CurrentWaveType {
+        WAVE1, WAVE2, WAVE3, PAUSE
+    }
+
+    // Current Wave
+    public CurrentWaveType currentWaveType = CurrentWaveType.WAVE1;
+
     // Enum of valid enemies
     public enum NextEnemyType {
         ELECTROBOT, MECGIRL

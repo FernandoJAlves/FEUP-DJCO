@@ -1852,6 +1852,7 @@ MonoBehaviour:
   durationWave2: 30
   durationWave3: 30
   durationBetweenRounds: 5
+  currentWaveType: 0
 --- !u!114 &1553340562
 MonoBehaviour:
   m_ObjectHideFlags: 0
