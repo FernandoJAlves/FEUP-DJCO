@@ -30,6 +30,11 @@ public class EnemySpawningScript : MonoBehaviour
         ELECTROBOT, MECGIRL
     }
 
+    // Wave Number UIs
+    public GameObject wave1UI;
+    public GameObject wave2UI;
+    public GameObject wave3UI;
+
     private float screenHeight = 0f;
     private float screenWidth = 0f;
 
@@ -38,6 +43,8 @@ public class EnemySpawningScript : MonoBehaviour
         Vector2 edgeVector = Camera.main.ViewportToWorldPoint(topRightCorner);
         screenHeight = edgeVector.y * 2;
         screenWidth = edgeVector.x * 2;
+        wave1UI.SetActive(true);
+        Invoke("DisableWave1UI", 5f);
     }
 
     // Update is called once per frame
@@ -139,12 +146,16 @@ public class EnemySpawningScript : MonoBehaviour
             case CurrentWaveType.PAUSE1: 
                 if (timeInCurrentWave > durationBetweenRounds) {
                     currentWaveType = CurrentWaveType.WAVE2;
+                    wave2UI.SetActive(true);
+                    Invoke("DisableWave2UI", 5f);
                     timeInCurrentWave = 0f;
                 }
                 break;
             case CurrentWaveType.PAUSE2: 
                 if (timeInCurrentWave > durationBetweenRounds) {
                     currentWaveType = CurrentWaveType.WAVE3;
+                    wave3UI.SetActive(true);
+                    Invoke("DisableWave3UI", 5f);
                     timeInCurrentWave = 0f;
                 }
                 break;
@@ -159,6 +170,18 @@ public class EnemySpawningScript : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void DisableWave1UI () {
+        wave1UI.SetActive(false);
+    }
+
+    public void DisableWave2UI () {
+        wave2UI.SetActive(false);
+    }
+
+    public void DisableWave3UI () {
+        wave3UI.SetActive(false);
     }
 
 }

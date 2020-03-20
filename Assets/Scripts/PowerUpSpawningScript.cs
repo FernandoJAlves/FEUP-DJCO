@@ -6,13 +6,14 @@ public class PowerUpSpawningScript : MonoBehaviour
     // List of power ups
     public GameObject calPowerUp;
     public GameObject aocPowerUp;
+    public GameObject lifePowerUp;
 
     public float spawnRate = 6f;
     float nextSpawn = 0f;
 
     // Enum of valid power ups
     public enum NextPowerType {
-        CAL_POWER, AOC_POWER
+        CAL_POWER, AOC_POWER, LIFE_POWER
     }
 
     private float screenHeight = 0f;
@@ -53,6 +54,13 @@ public class PowerUpSpawningScript : MonoBehaviour
                 break;
             }
 
+            case NextPowerType.LIFE_POWER: {
+                float randOffsetY = Random.Range(-1.2f, 1.2f);
+                Vector3 spawnPoint = new Vector3 (screenWidth + 1f, randOffsetY, -5f);
+                Instantiate (lifePowerUp, spawnPoint, Quaternion.identity);
+                break;
+            }
+
             default:
                 break;
         }
@@ -67,9 +75,13 @@ public class PowerUpSpawningScript : MonoBehaviour
         if (randValue <= 0.5f) {
             return NextPowerType.CAL_POWER;
         }
-        // 50% of AOC_POWER
-        else if (randValue <= 1f) {
+        // 35% of AOC_POWER
+        else if (randValue <= 0.85f) {
             return NextPowerType.AOC_POWER;
+        }
+        // 15% of LIFE_POWER
+        else if (randValue <= 1f) {
+            return NextPowerType.LIFE_POWER;
         }
 
         Debug.LogError("Enexpected return statement reached");
