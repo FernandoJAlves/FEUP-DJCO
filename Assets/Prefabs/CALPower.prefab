@@ -224,5 +224,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 10
-  speedFactor: 1.2
   movementSpeed: 1
+  speedFactor: 1.2

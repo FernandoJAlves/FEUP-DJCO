@@ -76,6 +76,11 @@ public class GameStateController : MonoBehaviour
         GetComponent<PowerUpSpawningScript>().enabled = false;
     }
 
+    public void DisableObstacleAndPowerUpsSpawners() {
+        GetComponent<ObstacleSpawningScript>().enabled = false;
+        GetComponent<PowerUpSpawningScript>().enabled = false;
+    }
+
     public void Score(int points) {
         this.score += points;
     }

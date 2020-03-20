@@ -48,7 +48,8 @@ public class EnemySpawningScript : MonoBehaviour
         if (Time.time > nextSpawn &&
             currentWaveType != CurrentWaveType.PAUSE1 &&
             currentWaveType != CurrentWaveType.PAUSE2 &&
-            currentWaveType != CurrentWaveType.PAUSE3) {
+            currentWaveType != CurrentWaveType.PAUSE3 &&
+            currentWaveType != CurrentWaveType.GAMEENDED) {
 
             spawnEnemy();
         }
@@ -84,19 +85,31 @@ public class EnemySpawningScript : MonoBehaviour
     }
 
     private NextEnemyType getNextEnemy() {
-        float randValue = Random.Range(0f, 1f);
         
-        // 50% of ElectroBot
-        if (randValue <= 0.5f) {
-            return NextEnemyType.ELECTROBOT;
-        }
-        // 50% of MecGirl
-        else if (randValue <= 1f) {
-            return NextEnemyType.MECGIRL;
-        }
+        switch (currentWaveType)
+        {
+            case CurrentWaveType.WAVE1:
+                return NextEnemyType.ELECTROBOT;
 
-        Debug.LogError("Enexpected return statement reached");
-        return NextEnemyType.ELECTROBOT;
+            case CurrentWaveType.WAVE2:
+                return NextEnemyType.MECGIRL;
+            
+            case CurrentWaveType.WAVE3: {
+                float randValue = Random.Range(0f, 1f);
+                // 50% of ElectroBot
+                if (randValue <= 0.5f) {
+                    return NextEnemyType.ELECTROBOT;
+                }
+                // 50% of MecGirl
+                else {
+                    return NextEnemyType.MECGIRL;
+                }
+            }
+            
+            default:
+                Debug.LogError("Enexpected default statement reached");
+                return NextEnemyType.ELECTROBOT;
+        }
     }
 
     private void UpdateWaveState () {
@@ -120,6 +133,7 @@ public class EnemySpawningScript : MonoBehaviour
                 if (timeInCurrentWave > durationWave3) {
                     currentWaveType = CurrentWaveType.PAUSE3;
                     timeInCurrentWave = 0f;
+                    GameStateController.instance.DisableObstacleAndPowerUpsSpawners();
                 }
                 break;
             case CurrentWaveType.PAUSE1: 
