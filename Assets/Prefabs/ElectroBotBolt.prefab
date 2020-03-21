@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   body: {fileID: -3194737571343087919}
+  sprite: {fileID: 8870359458965767287}
