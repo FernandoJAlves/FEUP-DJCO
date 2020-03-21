@@ -28,12 +28,7 @@ public class GameStateController : MonoBehaviour
     }
 
     private void Update() {
-        if (gameState == GameState.GAMEWON || gameState == GameState.GAMEOVER) {
-            // TODO: remove this, temporary while I have no buttons
-            if (Input.GetKey("r")) {
-                Invoke("RestartLevel", restartDelay);
-            }
-        } else if (gameState == GameState.PLAYING) {
+        if (gameState == GameState.PLAYING) {
             playTime += Time.deltaTime;
             timeSinceLastScoreSync += Time.deltaTime;
 
@@ -47,6 +42,10 @@ public class GameStateController : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ReturnMenu() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
 
