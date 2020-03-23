@@ -2908,7 +2908,7 @@ MonoBehaviour:
   electroBot: {fileID: 105491344925835000, guid: fb26299a4711b4118ad95284039d572a,
     type: 3}
   mecGirl: {fileID: 1466609639246928777, guid: 16a266340854a43c7a43c08504a4d031, type: 3}
-  spawnRate: 2.5
+  spawnRate: 1.5
   durationWave1: 30
   durationWave2: 30
   durationWave3: 30

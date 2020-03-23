@@ -7,7 +7,7 @@ public class EnemySpawningScript : MonoBehaviour
     public GameObject mecGirl;
 
     // Vars for spawnRate
-    public float spawnRate = 2.5f;
+    public float spawnRate = 1.5f;
     float nextSpawn = 0f;
 
     // Vars for waves duration
