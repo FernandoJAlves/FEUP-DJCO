@@ -2871,6 +2871,7 @@ GameObject:
   - component: {fileID: 1553340563}
   - component: {fileID: 1553340564}
   - component: {fileID: 1553340565}
+  - component: {fileID: 1553340566}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2985,6 +2986,20 @@ MonoBehaviour:
   lifePowerUp: {fileID: 5949614592479911080, guid: 25cca2a44217e63e6933287d6bd62be0,
     type: 3}
   spawnRate: 6
+--- !u!114 &1553340566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553340559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a43cc9fd05f50bd199941729e931e37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 3379517894602612885, guid: ed6ddd9d56f2e008c9d9f446b40c4903,
+    type: 3}
 --- !u!1 &1699145728
 GameObject:
   m_ObjectHideFlags: 0

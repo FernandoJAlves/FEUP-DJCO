@@ -34,6 +34,7 @@ public class MecGirlMovement : MonoBehaviour
     {
         Debug.Log("MecGirl collided with " + hitInfo.name);
         GameStateController.instance.Score(this.destructionScore);
+        ExplosionSpawner.instance.Explode(transform.position);
         Destroy(gameObject);
     }
 

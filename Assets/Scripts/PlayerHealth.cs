@@ -47,6 +47,8 @@ public class PlayerHealth : MonoBehaviour
         this.healthPoints--;
 
         if (this.healthPoints <= 0) {
+            toggleSprites();
+            ExplosionSpawner.instance.Explode(transform.position);
             GameStateController.instance.GameOver();
         } else {
             boxCollider.enabled = false;

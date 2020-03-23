@@ -108,6 +108,7 @@ public class ElectroBotMovement : MonoBehaviour
     {
         Debug.Log("ElectroBot collided with " + hitInfo.name);
         GameStateController.instance.Score(this.destructionScore);
+        ExplosionSpawner.instance.Explode(transform.position);
         Destroy(gameObject);
     }
 
