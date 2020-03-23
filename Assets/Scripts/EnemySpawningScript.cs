@@ -157,7 +157,7 @@ public class EnemySpawningScript : MonoBehaviour
                     wave3UI.SetActive(true);
                     Invoke("DisableWave3UI", 5f);
                     timeInCurrentWave = 0f;
-                    spawnRate = 1.1f;
+                    spawnRate = 0.7f;
                 }
                 break;
             case CurrentWaveType.PAUSE3:
