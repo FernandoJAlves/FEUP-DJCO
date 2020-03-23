@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        music.volume = 1f;
+        music.volume = 0.5f;
     }
 
     void Pause() {
