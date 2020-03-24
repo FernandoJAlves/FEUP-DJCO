@@ -44,7 +44,7 @@ public class EnemySpawningScript : MonoBehaviour
         screenHeight = edgeVector.y * 2;
         screenWidth = edgeVector.x * 2;
         wave1UI.SetActive(true);
-        Invoke("DisableWave1UI", 5f);
+        Invoke("DisableWave1UI", 3f);
     }
 
     // Update is called once per frame
@@ -147,7 +147,7 @@ public class EnemySpawningScript : MonoBehaviour
                 if (timeInCurrentWave > durationBetweenRounds) {
                     currentWaveType = CurrentWaveType.WAVE2;
                     wave2UI.SetActive(true);
-                    Invoke("DisableWave2UI", 5f);
+                    Invoke("DisableWave2UI", 3f);
                     timeInCurrentWave = 0f;
                 }
                 break;
@@ -155,7 +155,7 @@ public class EnemySpawningScript : MonoBehaviour
                 if (timeInCurrentWave > durationBetweenRounds) {
                     currentWaveType = CurrentWaveType.WAVE3;
                     wave3UI.SetActive(true);
-                    Invoke("DisableWave3UI", 5f);
+                    Invoke("DisableWave3UI", 3f);
                     timeInCurrentWave = 0f;
                     spawnRate = 0.7f;
                 }
