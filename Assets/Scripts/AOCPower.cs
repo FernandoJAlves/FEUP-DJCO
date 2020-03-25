@@ -2,7 +2,7 @@
 
 public class AOCPower : PowerUp
 {
-    public float shootingAngle = 45f;
+    public float shootingAngle = 30f;
 
     protected override void ActivatePowerUp(Collider2D player)
     {

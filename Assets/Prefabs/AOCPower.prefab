@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLimit: 10
   movementSpeed: 1
-  shootingAngle: 45
+  shootingAngle: 30
 --- !u!1 &7831270485672370121
 GameObject:
   m_ObjectHideFlags: 0

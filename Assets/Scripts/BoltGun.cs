@@ -33,7 +33,7 @@ public class BoltGun : MonoBehaviour
         float maxAngle = shootingAngle;
         float minAngle = 0 - maxAngle;
 
-        for (float angle = minAngle; angle <= maxAngle; angle += 45)
+        for (float angle = minAngle; angle <= maxAngle; angle += 30)
         {
             GameObject bolt = ObjectPooler.sharedInstance.GetPooledObject();
             if (bolt != null)
