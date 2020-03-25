@@ -969,8 +969,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36.6, y: 0}
-  m_SizeDelta: {x: 201.8, y: 84.2}
+  m_AnchoredPosition: {x: -36.6, y: 3.95}
+  m_SizeDelta: {x: 201.8, y: 92.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &618876779
 MonoBehaviour:
@@ -992,7 +992,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 18
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1399,7 +1399,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 18
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1492,9 +1492,9 @@ MonoBehaviour:
 
     The city of Porto has evolved and technology has evolved.
     Cars fly now and every teenager owns a hoverboard. But some habits remain the
-    same and you, an Informatics student in NEO-FEUP, are late to the DJCO class.
-    During your trip, be aware of your rivals from other courses, who want to kill
-    you, because reasons....'
+    same and you, an Informatics student in NEO-FEUP, are late again to the DJCO
+    class. During your trip, be aware of your rivals from other courses, who want
+    to kill you, because reasons....'
 --- !u!222 &984114464
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2632,7 +2632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 94.1, y: 0.00000047684}
+  m_AnchoredPosition: {x: 94.1, y: 3.95}
   m_SizeDelta: {x: 28, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1322852161
@@ -4314,8 +4314,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36.6, y: 0}
-  m_SizeDelta: {x: 201.8, y: 84.2}
+  m_AnchoredPosition: {x: -36.6, y: -1.83}
+  m_SizeDelta: {x: 201.8, y: 83.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2112230187
 MonoBehaviour:
@@ -4337,7 +4337,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 18
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -4348,7 +4348,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: USE THE OPTIMIZATION ALGORITHMS OF CAL TO INCREASE YOUR BOLTS SPEED
+  m_Text: USE THE OPTIMIZATION ALGORITHMS OF CAL TO INCREASE YOUR BOLTS' SPEED
 --- !u!222 &2112230188
 CanvasRenderer:
   m_ObjectHideFlags: 0
